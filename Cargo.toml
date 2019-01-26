@@ -15,3 +15,7 @@ libc = "0.2.48"
 
 [patch.crates-io]
 smithay-client-toolkit = { git = "https://github.com/smithay/client-toolkit" }
+
+[dev-dependencies]
+andrew = "0.2.0"
+rand = "0.6.4"
