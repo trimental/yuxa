@@ -83,9 +83,6 @@ impl std::fmt::Display for CreationError {
         if let CreationError::NotSupported(msg) = self {
             write!(formatter, ": {}", msg)?;
         }
-        if let Some(err) = std::error::Error::cause(self) {
-            write!(formatter, ": {}", err)?;
-        }
         Ok(())
     }
 }

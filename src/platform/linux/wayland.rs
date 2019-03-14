@@ -21,6 +21,7 @@ pub struct WaylandBackend {
 }
 
 impl WaylandBackend {
+    #[inline]
     pub fn new(window: &winit::Window) -> Option<WaylandBackend> {
         let mut wayland = None;
         if let Some(winit_display) = window.get_wayland_display() {
@@ -44,6 +45,7 @@ impl WaylandBackend {
         wayland
     }
 
+    #[inline]
     pub fn draw_argb8888(&mut self, dimensions: (usize, usize), buffer: &[[u8; 4]]) {
         if let Some(mut pool) = self.pools.pool() {
             pool.resize(4 * dimensions.0 * dimensions.1)
@@ -82,6 +84,7 @@ impl WaylandBackend {
         }
     }
 
+    #[inline]
     pub fn draw_argb8888_bytes(&mut self, dimensions: (usize, usize), buffer: &[u8]) {
         if let Some(mut pool) = self.pools.pool() {
             pool.resize(4 * dimensions.0 * dimensions.1)
@@ -117,6 +120,7 @@ impl WaylandBackend {
         }
     }
 
+    #[inline]
     pub fn draw_argb32(&mut self, dimensions: (usize, usize), buffer: &[u32]) {
         if let Some(mut pool) = self.pools.pool() {
             pool.resize(4 * dimensions.0 * dimensions.1)

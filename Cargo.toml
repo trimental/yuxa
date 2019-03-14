@@ -5,16 +5,13 @@ authors = ["Lucas Timmins <timmins.s.lucas@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-winit = "0.18.1"
+winit = "0.19"
 
 [target.'cfg(any(target_os = "linux", target_os = "dragonfly", target_os = "freebsd", target_os = "openbsd", target_os = "netbsd"))'.dependencies]
-sctk = { package = "smithay-client-toolkit", git = "https://github.com/smithay/client-toolkit" }
+sctk = { package = "smithay-client-toolkit", version = "0.4" }
 byteorder = "1.3.1"
 x11-dl = "2.18.3"
 libc = "0.2.48"
-
-[patch.crates-io]
-smithay-client-toolkit = { git = "https://github.com/smithay/client-toolkit" }
 
 [dev-dependencies]
 andrew = "0.2.0"
