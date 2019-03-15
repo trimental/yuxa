@@ -8,6 +8,10 @@
 #[path = "platform/linux/mod.rs"]
 mod platform;
 
+#[cfg(target_os = "windows")]
+#[path = "platform/windows/mod.rs"]
+mod platform;
+
 pub use self::platform::*;
 
 pub use winit::{
